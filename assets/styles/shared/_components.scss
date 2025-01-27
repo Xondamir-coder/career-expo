@@ -1,7 +1,9 @@
 @use '../abstracts/variables' as *;
 
 .icon {
+	$duration: 0.3s;
 	width: clamp(20px, 1.3vw, 24px);
+	transition: fill $duration, stroke $duration;
 }
 .logo {
 	fill: $clr-primary;

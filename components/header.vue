@@ -15,7 +15,10 @@
 				:to="link.to"
 				class="header__link"
 				active-class="active">
-				{{ link.label }}
+				<div class="header__link-bg_container">
+					<div class="header__link-bg"></div>
+				</div>
+				<span class="header__link-text">{{ link.label }}</span>
 			</NuxtLink>
 		</nav>
 		<div class="header__right">
@@ -127,7 +130,7 @@ const currentLang = ref('en');
 		& > * {
 			border-radius: 10px;
 			padding-inline: clamp(12px, 0.8vw, 14px);
-			animation: 0.5s 0.8s backwards;
+			animation: 0.5s 0.6s backwards;
 			&:first-child {
 				animation-name: slide-from-left;
 			}
@@ -155,20 +158,50 @@ const currentLang = ref('en');
 		}
 	}
 	&__link {
+		$transition-duration: 0.5s;
 		font-size: clamp(14px, 1vw, 16px);
 		font-weight: 500;
 		padding-block: clamp(12px, 0.8vw, 14px);
 		padding-inline: clamp(14px, 1.2vw, 22px);
 		position: relative;
 		border-radius: 8px;
-		transition: background-color 0.3s, color 0.3s;
+		transition: color $transition-duration;
 		animation: 0.5s backwards;
+		display: flex;
+
+		&-bg {
+			background-color: $clr-primary;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transform: scaleY(0);
+			transform-origin: bottom;
+			transition: transform $transition-duration;
+			&_container {
+				border-radius: inherit;
+				inset: 0;
+				position: absolute;
+				overflow: hidden;
+				display: flex;
+			}
+		}
+		&-text {
+			z-index: 2;
+		}
 		&:hover {
 			color: $clr-primary;
 		}
 		&.active {
 			color: #fff;
-			background-color: $clr-primary;
+			// background-color: $clr-primary;
+			&::before {
+				transform: translateX(-50%) scaleX(1);
+			}
+			.header__link-bg {
+				transform: scaleY(1);
+			}
 		}
 		&::before {
 			content: '';
@@ -177,11 +210,12 @@ const currentLang = ref('en');
 			width: calc(100% - clamp(14px, 1.2vw, 22px) * 2);
 			top: 0;
 			left: 50%;
-			transform: translateX(-50%);
+			transform: translateX(-50%) scaleX(0);
 			background: #fff;
 			border-bottom-left-radius: 6px;
 			border-bottom-right-radius: 6px;
 			z-index: 2;
+			transition: transform $transition-duration 0.3s;
 		}
 		&:not(:last-child)::after {
 			content: '';
@@ -200,7 +234,7 @@ const currentLang = ref('en');
 				} @else {
 					animation-name: slide-from-bottom;
 				}
-				animation-delay: $i * 0.1s + 0.2s;
+				animation-delay: $i * 0.1s + 0.1s;
 			}
 		}
 	}

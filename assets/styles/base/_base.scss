@@ -13,13 +13,13 @@ html {
 body {
 	font-family: $font-base, sans-serif;
 	font-weight: 400;
-	overflow: hidden;
 }
 a {
 	text-decoration: none;
 	color: inherit;
 }
 main {
+	padding-inline: $layout-spacing;
 }
 img {
 	max-width: 100%;
@@ -41,6 +41,10 @@ textarea {
 	color: inherit;
 	border: none;
 	outline: none;
+	&::placeholder {
+		color: inherit;
+		opacity: 0.8;
+	}
 }
 
 /* Lenis */
