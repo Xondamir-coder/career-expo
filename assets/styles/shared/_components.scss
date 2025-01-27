@@ -1,0 +1,8 @@
+@use '../abstracts/variables' as *;
+
+.icon {
+	width: clamp(20px, 1.3vw, 24px);
+}
+.logo {
+	fill: $clr-primary;
+}

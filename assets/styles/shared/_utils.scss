@@ -1,0 +1,15 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.overflow-hidden {
+	overflow: hidden;
+}
+.dis-none {
+	display: none !important;
+}
+.align-self-center {
+	align-self: center;
+}
+.fill-primary {
+	fill: $clr-primary;
+}

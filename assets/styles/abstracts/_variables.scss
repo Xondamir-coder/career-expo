@@ -1,0 +1,31 @@
+// Colors
+$clr-primary: #3399cc;
+$clr-secondary: #33cfff;
+$clr-deep-cyan: #0a1f29;
+$clr-midnight-blue: #111827;
+$clr-neutral-grey: #818898;
+$clr-dark-grey: #1f2937;
+$clr-light-grey: #a0aec0;
+$clr-black: #0d0d12;
+$clr-white: #ebf5fa;
+$clr-off-white: #f8fafb;
+$clr-light-white: #f8f8f8;
+$clr-muted-blue: #323b49;
+$clr-navy-blue: #001833;
+$clr-accent-yellow: #c89e45;
+$clr-muted-grey: #687588;
+$clr-muted-grey-light: #666d80;
+
+// Breakpoints
+$bp-xs: 425px;
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+$bp-xxl: 1400px;
+
+// Font
+$font-base: 'AA Stetica';
+
+// Others
+$layout-spacing: clamp(16px, 3.7vw, 70px);
