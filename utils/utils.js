@@ -30,7 +30,7 @@ export const defaultScrollTrigger = (trigger, options) => ({
 
 		// Default values
 		start: '10% bottom',
-		end: 'center bottom',
+		end: 'bottom 90%',
 		scrub: 1,
 
 		// You can override any ScrollTrigger options here

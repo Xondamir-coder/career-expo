@@ -1,6 +1,6 @@
 <template>
 	<footer class="footer" id="footer">
-		<Logo class="footer__logo" />
+		<Logo class="footer__logo logo" />
 		<div class="footer__middle">
 			<div class="footer__middle-cta">
 				<h2 class="footer__title">

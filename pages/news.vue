@@ -1,14 +1,15 @@
 <template>
 	<main class="news" id="news">
 		<h1 class="news__title">Мы более 10 лет проводим крупнейшие карьерные выставки</h1>
-		<div class="news__content">
+		<section class="news__content">
 			<NewsSidebar @change-field="changeField" :current-field="currentField" />
 			<NewsFilter v-model="query" @submit-query="filterNews" />
 			{{ query }}
 			<div class="news__list">
 				<NewsCard v-for="card in cards" :data="card" />
 			</div>
-		</div>
+		</section>
+		<Partners />
 	</main>
 </template>
 
@@ -53,9 +54,10 @@ const filterNews = () => {
 }
 .news {
 	margin-top: clamp(16px, 3.2vw, 60px);
+	margin-bottom: clamp(16px, 2.1vw, 40px);
 	display: flex;
 	flex-direction: column;
-	gap: clamp(20px, 4.2vw, 80px);
+	gap: clamp(20px, 2.1vw, 40px);
 	padding-inline: 0;
 	&__list {
 		grid-area: list;
@@ -86,6 +88,7 @@ const filterNews = () => {
 		}
 	}
 	&__title {
+		margin-bottom: clamp(10px, 2.1vw, 40px);
 		padding-inline: $layout-spacing;
 		align-self: center;
 		text-transform: uppercase;

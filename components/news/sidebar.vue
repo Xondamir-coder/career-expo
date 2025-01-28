@@ -95,6 +95,7 @@ const emits = defineEmits(['changeField']);
 			background-color: $clr-primary;
 			z-index: 2;
 		}
+		&:hover,
 		&.active {
 			color: $clr-primary;
 		}
