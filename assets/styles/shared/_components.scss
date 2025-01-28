@@ -3,7 +3,11 @@
 .icon {
 	$duration: 0.3s;
 	width: clamp(20px, 1.3vw, 24px);
-	transition: fill $duration, stroke $duration;
+	transition: fill $duration, stroke $duration, transform $duration;
+	&-rect {
+		width: clamp(26px, 1.9vw, 36px);
+		fill: $clr-primary;
+	}
 }
 .logo {
 	fill: $clr-primary;

@@ -13,6 +13,9 @@
 .fill-primary {
 	fill: $clr-primary;
 }
+.fill-green {
+	fill: $clr-green;
+}
 .clr-primary {
 	color: $clr-primary;
 }
@@ -21,4 +24,7 @@
 }
 .stroke-neutral-grey {
 	stroke: $clr-neutral-grey;
+}
+.stroke-primary {
+	stroke: $clr-primary;
 }

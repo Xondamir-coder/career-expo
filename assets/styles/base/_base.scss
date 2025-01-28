@@ -19,6 +19,8 @@ a {
 	color: inherit;
 }
 main {
+	margin-top: clamp(16px, 3.2vw, 60px);
+	margin-bottom: clamp(16px, 2.1vw, 40px);
 	padding-inline: $layout-spacing;
 }
 img {

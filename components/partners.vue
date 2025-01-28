@@ -1,32 +1,18 @@
 <template>
 	<section class="partners" ref="partnersRef">
 		<div class="partners__left">
-			<div class="partners__content">
-				<div class="partners__top">
-					<svg
-						width="36"
-						height="37"
-						viewBox="0 0 36 37"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg">
-						<rect y="0.333984" width="36" height="36" rx="10" fill="#3399CC" />
-						<rect x="8" y="8.33398" width="20" height="20" fill="white" />
-					</svg>
-					<h3 class="partners__label">Partners</h3>
-				</div>
-				<h2 class="partners__title">
-					Expo Careerda sizning <span class="clr-primary">Kelajagingiz</span> Boshlanadi!
-				</h2>
-			</div>
-			<p class="partners__text">
+			<TitleBlock label="Partners">
+				Expo Careerda sizning <span class="clr-primary">Kelajagingiz</span> Boshlanadi!
+			</TitleBlock>
+			<p class="partners__text" ref="textRef">
 				Discover leading companies and innovative services at the international insurance
 				exhibition. Explore the latest updates and opportunities in the insurance industry
 				all in one place.
 			</p>
 		</div>
-		<div class="partners__wrapper">
+		<div class="partners__wrapper" ref="wrapperRef">
 			<ul class="partners__list" v-for="(row, i) in rows" :key="i">
-				<li class="partners__item" v-for="item in row" :key="item">
+				<li class="partners__item" v-for="item in row" :key="item" ref="itemsRef">
 					<component :is="item" class="partners__bank" />
 				</li>
 			</ul>
@@ -71,22 +57,18 @@ const partners = [
 	Ziraat
 ];
 const rows = [partners.slice(0, partners.length / 2), partners.slice(partners.length / 2)];
-const partnersRef = ref();
+const textRef = ref();
+const itemsRef = ref();
+const wrapperRef = ref();
 
 onMounted(() => {
-	GSAPanimation(partnersRef.value.querySelector('.partners__text'), {
+	GSAPanimation(textRef.value, {
 		animProps: { x: -50 }
 	});
-	GSAPanimation(partnersRef.value.querySelector('.partners__content').children, {
-		animProps: { stagger: 0.2, x: -50 },
-		scrollTriggerOptions: {
-			trigger: partnersRef.value.querySelector('.partners__content')
-		}
-	});
-	GSAPanimation(partnersRef.value.querySelectorAll('.partners__item'), {
+	GSAPanimation(itemsRef.value, {
 		animProps: { scale: 0, stagger: 0.1 },
 		scrollTriggerOptions: {
-			trigger: partnersRef.value.querySelector('.partners__wrapper')
+			trigger: wrapperRef.value
 		}
 	});
 });
@@ -125,22 +107,6 @@ onMounted(() => {
 		font-size: clamp(14px, 1vw, 16px);
 		line-height: 1.35;
 	}
-	&__label {
-		text-transform: uppercase;
-		font-size: clamp(14px, 0.9vw, 16px);
-	}
-	&__rect {
-		border: 8px solid $clr-primary;
-		width: 36px;
-		aspect-ratio: 1;
-		border-radius: 10px;
-	}
-	&__title {
-		text-transform: uppercase;
-		line-height: 1.2;
-		font-size: clamp(22px, 2.2vw, 42px);
-		max-width: 18ch;
-	}
 	&__item {
 		border-radius: clamp(12px, 0.9vw, 16px);
 		background: #ffffff;
@@ -172,17 +138,6 @@ onMounted(() => {
 		&:last-child {
 			animation-name: animate-right;
 		}
-	}
-	&__top {
-		display: flex;
-		align-items: center;
-		gap: 10px;
-	}
-	&__content {
-		display: flex;
-		flex-direction: column;
-		color: $clr-midnight-blue;
-		gap: clamp(12px, 0.9vw, 16px);
 	}
 	&__left {
 		display: flex;

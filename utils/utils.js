@@ -13,8 +13,8 @@ export const getLinks = () => {
 			label: 'News'
 		},
 		{
-			to: '/events',
-			label: 'Events'
+			to: '/vacancies',
+			label: 'Vacancies'
 		},
 		{
 			to: '/partners-sponsors',
@@ -56,7 +56,7 @@ export const GSAPanimation = (trigger, { method = 'from', animProps, scrollTrigg
 
 	$gsap[method](trigger, {
 		// Default values
-		opacity: 0,
+		opacity: method === 'from' ? 0 : 1,
 
 		// You can override any GSAP options here
 		...animProps,
