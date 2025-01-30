@@ -64,13 +64,11 @@ onMounted(() => {
 	flex-direction: column;
 	color: $clr-midnight-blue;
 	gap: clamp(12px, 0.9vw, 16px);
-	&[animate] {
-		.block__top {
-			animation: slide-from-right 0.5s;
-		}
-		.block__title {
-			animation: slide-from-left 0.5s;
-		}
+	.block__top {
+		animation: slide-from-right 0.5s;
+	}
+	.block__title {
+		animation: slide-from-left 0.5s;
 	}
 	&__label {
 		text-transform: uppercase;

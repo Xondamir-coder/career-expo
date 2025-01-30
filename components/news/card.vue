@@ -82,58 +82,15 @@ const date = computed(() =>
 		animation: slide-from-right 0.5s backwards;
 	}
 	&__date {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-		color: $clr-midnight-blue;
-		font-size: 14px;
-		font-weight: 500;
+		@include news-card-date-text;
 	}
 	&__title {
 		animation-delay: 0.1s;
-		line-height: 1.4;
-		font-size: clamp(18px, 1.2vw, 22px);
-		font-weight: 500;
+		@include news-card-title;
 	}
 	&__link {
-		@include white-shadow-style;
 		animation-delay: 0.2s;
-		display: flex;
-		gap: 5px;
-		align-items: center;
-		font-size: clamp(14px, 1vw, 16px);
-		font-weight: 500;
-		padding-block: 10px;
-		padding-inline: 16px;
-		border-radius: 50px;
-		position: relative;
-		overflow: hidden;
-		transition: color 0.3s, border-color 0.3s;
-		&:hover {
-			color: #fff;
-			border-color: transparent;
-			.icon {
-				stroke: #fff;
-				transform: translateX(3px);
-			}
-			&::after {
-				transform: scaleY(1);
-			}
-		}
-		&::after {
-			content: '';
-			position: absolute;
-			inset: 0;
-			background-color: $clr-primary;
-			transform: scaleY(0);
-			transform-origin: top;
-			transition: transform 0.3s;
-		}
-
-		span,
-		.icon {
-			z-index: 2;
-		}
+		@include news-card-link;
 	}
 	&__top {
 		display: flex;

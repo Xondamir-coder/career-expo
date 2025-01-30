@@ -26,7 +26,9 @@
 				<IconsGlobe class="icon fill-primary" />
 				<span>{{ currentLang.toUpperCase() }}</span>
 			</button>
-			<NuxtLink to="/contact" class="header__button">Contact Us</NuxtLink>
+			<NuxtLink to="/contact" class="header__button">
+				<span>Contact Us</span>
+			</NuxtLink>
 		</div>
 	</header>
 </template>
@@ -117,11 +119,27 @@ const currentLang = ref('en');
 		padding-block: clamp(14px, 1vw, 16px);
 		font-weight: 500;
 		font-size: clamp(14px, 0.9vw, 16px);
-		background-color: $clr-primary;
-		transition: background-color 0.3s, color 0.3s;
+		transition: color 0.4s;
+		display: flex;
+		position: relative;
+		overflow: hidden;
+		span {
+			z-index: 1;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-color: $clr-primary;
+			transition: transform 0.4s;
+			transform-origin: top;
+		}
 		&:hover {
 			color: $clr-primary;
-			background-color: #fff;
+			&::before {
+				transform: scaleY(0);
+				transform-origin: bottom;
+			}
 		}
 	}
 	&__right {
