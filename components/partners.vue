@@ -1,7 +1,7 @@
 <template>
 	<section class="partners" ref="partnersRef">
 		<div class="partners__left">
-			<TitleBlock label="Partners">
+			<TitleBlock label="Partners" data-gsap-animate="true">
 				Expo Careerda sizning <span class="clr-primary">Kelajagingiz</span> Boshlanadi!
 			</TitleBlock>
 			<p class="partners__text" ref="textRef">
@@ -93,7 +93,7 @@ onMounted(() => {
 }
 .partners {
 	margin-inline: $layout-spacing;
-	border-radius: clamp(25px, 3.1vw, 60px);
+	border-radius: clamp(12px, 1.11vw, 20px);
 	padding: clamp(10px, 2.1vw, 40px);
 	display: grid;
 	background-color: #fff;

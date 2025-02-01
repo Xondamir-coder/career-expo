@@ -2,7 +2,7 @@
 @use '../shared/animations' as *;
 
 @mixin section-title {
-	margin-bottom: clamp(10px, 2.1vw, 40px);
+	margin-bottom: clamp(14px, 2.1vw, 40px);
 	padding-inline: $layout-spacing;
 	align-self: center;
 	text-transform: uppercase;

@@ -80,16 +80,19 @@ const currentLang = ref('en');
 	}
 }
 .header {
+	$top-spacing: clamp(16px, 1.1vw, 20px);
 	display: flex;
 	justify-content: space-between;
 	margin-inline: $layout-spacing;
 	border-radius: 16px;
-	padding-inline: clamp(16px, 1.1vw, 20px);
 	padding-block: 12px;
-	margin-top: clamp(16px, 2.1vw, 40px);
+	padding-inline: $top-spacing;
+	margin-top: $top-spacing;
 	background-color: #fff;
 	color: $clr-dark-grey;
-
+	position: sticky;
+	top: $top-spacing;
+	z-index: 10;
 	&__hamburger {
 		border-radius: 42px;
 		width: 42px;

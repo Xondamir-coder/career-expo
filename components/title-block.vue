@@ -1,13 +1,13 @@
 <template>
-	<div class="block">
-		<div class="block__top" ref="topRef">
+	<div class="block" ref="blockRefs">
+		<div class="block__top" ref="topRefs">
 			<IconsRect class="icon-rect" />
 			<h3 class="block__label">{{ label }}</h3>
 		</div>
 		<h2
 			class="block__title"
 			:style="{ maxWidth: maxChars ? `${maxChars}ch` : '100%' }"
-			ref="titleRef">
+			ref="titleRefs">
 			<slot />
 		</h2>
 	</div>
@@ -22,16 +22,16 @@ defineProps({
 	}
 });
 
-const titleRef = ref();
-const topRef = ref();
-const attrs = useAttrs();
+const titleRefs = ref([]);
+const topRefs = ref([]);
+const blockRefs = ref([]);
 
 onMounted(() => {
-	if (!attrs.animate) {
-		GSAPanimation(titleRef.value, {
+	if (blockRefs.value.dataset.gsapAnimate) {
+		GSAPanimation(titleRefs.value, {
 			animProps: { x: -50 }
 		});
-		GSAPanimation(topRef.value, {
+		GSAPanimation(topRefs.value, {
 			animProps: { x: 50 }
 		});
 	}
@@ -69,6 +69,10 @@ onMounted(() => {
 	}
 	.block__title {
 		animation: slide-from-left 0.5s;
+	}
+	&[data-gsap-animate] .block__top,
+	&[data-gsap-animate] .block__title {
+		animation: none;
 	}
 	&__label {
 		text-transform: uppercase;

@@ -5,7 +5,7 @@
 	width: clamp(20px, 1.3vw, 24px);
 	transition: fill $duration, stroke $duration, transform $duration;
 	&-rect {
-		width: clamp(26px, 1.9vw, 36px);
+		width: clamp(32px, 1.9vw, 36px);
 		fill: $clr-primary;
 	}
 }

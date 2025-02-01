@@ -2,7 +2,7 @@
 	<main class="news">
 		<h1 class="news__title">Мы более 10 лет проводим крупнейшие карьерные выставки</h1>
 		<div class="news__content">
-			<TitleBlock label="news" max-chars="" :animate="true">
+			<TitleBlock label="news" max-chars="">
 				All the latest news and exciting events
 			</TitleBlock>
 			<div class="news__list">
