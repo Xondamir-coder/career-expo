@@ -99,13 +99,11 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .participation {
+	@include soft-box;
 	display: flex;
 	flex-direction: column;
 	gap: clamp(30px, 3.2vw, 60px);
 	align-items: center;
-	background: #ffffff;
-	padding: clamp(16px, 2.1vw, 40px);
-	border-radius: clamp(12px, 1.6vw, 30px);
 	@media only screen and (max-width: $bp-lg) {
 		margin-top: 65px;
 	}

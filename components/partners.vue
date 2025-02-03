@@ -92,11 +92,9 @@ onMounted(() => {
 	}
 }
 .partners {
+	@include soft-box;
 	margin-inline: $layout-spacing;
-	border-radius: clamp(12px, 1.11vw, 20px);
-	padding: clamp(10px, 2.1vw, 40px);
 	display: grid;
-	background-color: #fff;
 	gap: 8px;
 	overflow: hidden;
 	@media only screen and (min-width: $bp-lg) {

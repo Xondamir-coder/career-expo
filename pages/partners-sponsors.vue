@@ -203,12 +203,10 @@ onMounted(() => {
 		margin-inline: 0;
 	}
 	&__content {
-		background-color: #fff;
+		@include soft-box;
 		display: flex;
 		flex-direction: column;
 		gap: clamp(30px, 3.2vw, 60px);
-		padding: clamp(16px, 2.1vw, 40px);
-		border-radius: clamp(12px, 1.1vw, 20px);
 		&-text {
 			font-size: clamp(14px, 1.1vw, 20px);
 			line-height: 1.2;

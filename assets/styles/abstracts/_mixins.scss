@@ -101,3 +101,8 @@
 	font-size: 14px;
 	font-weight: 500;
 }
+@mixin soft-box {
+	padding: clamp(16px, 2.1vw, 40px);
+	background: #ffffff;
+	border-radius: clamp(12px, 1.1vw, 20px);
+}
