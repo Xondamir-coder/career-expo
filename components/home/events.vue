@@ -70,6 +70,10 @@ useSwiper(swiperRef, {
 		afterInit: () => {
 			setTimeout(() => {
 				ScrollTrigger.refresh();
+				GSAPanimation(swiperRef.value.children, {
+					animProps: { y: 20, stagger: 0.1 },
+					scrollTriggerOptions: { trigger: swiperRef.value }
+				});
 			}, 50);
 		}
 	}

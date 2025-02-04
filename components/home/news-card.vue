@@ -1,17 +1,17 @@
 <template>
 	<div class="card">
-		<img class="card__image" :src="data.img" alt="card banner" />
+		<img class="card__image" :src="data.img" alt="card banner" ref="imgRef" />
 		<div class="card__content">
 			<div class="card__top">
-				<div class="card__date">
+				<div class="card__date" ref="dateRef">
 					<IconsCalendar class="icon fill-primary" />
 					<span>{{ date }}</span>
 				</div>
-				<h3 class="card__title">
+				<h3 class="card__title" ref="titleRef">
 					{{ data.title }}
 				</h3>
 			</div>
-			<p class="card__text">{{ data.text }}</p>
+			<p class="card__text" ref="textRef">{{ data.text }}</p>
 		</div>
 	</div>
 </template>
@@ -30,6 +30,26 @@ const date = computed(() =>
 		.format(new Date(props.data.date))
 		.replace('at', '')
 );
+
+const imgRef = ref([]);
+const titleRef = ref([]);
+const textRef = ref([]);
+const dateRef = ref([]);
+
+onMounted(() => {
+	GSAPanimation(imgRef.value, {
+		animProps: { y: 30 }
+	});
+	GSAPanimation(dateRef.value, {
+		animProps: { x: -15 }
+	});
+	GSAPanimation(titleRef.value, {
+		animProps: { x: 15 }
+	});
+	GSAPanimation(textRef.value, {
+		animProps: { y: -20 }
+	});
+});
 </script>
 
 <style lang="scss" scoped>

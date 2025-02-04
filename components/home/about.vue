@@ -20,7 +20,7 @@
 				<span class="about__time">{{ currentTime }}</span>
 			</button>
 		</div>
-		<ul class="about__list">
+		<ul class="about__list" ref="listRef">
 			<li class="about__item" v-for="(item, i) in items" :key="i">
 				<div class="about__item-content">
 					<p class="about__item-subtitle">{{ item.subtitle }}</p>
@@ -36,6 +36,7 @@
 const currentTime = ref('00:00');
 const isPlaying = ref(true);
 const videoRef = ref();
+const listRef = ref();
 
 const item = {
 	title: 'About expo',
@@ -56,6 +57,13 @@ const toggleVideo = () => {
 	isPlaying.value ? videoRef.value.pause() : videoRef.value.play();
 	isPlaying.value = !isPlaying.value;
 };
+
+onMounted(() => {
+	GSAPanimation(listRef.value.children, {
+		animProps: { scale: 0.9, stagger: 0.05 },
+		scrollTriggerOptions: { trigger: listRef.value }
+	});
+});
 </script>
 
 <style lang="scss" scoped>

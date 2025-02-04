@@ -4,7 +4,7 @@
 		<div class="news__container">
 			<div class="news__left">
 				<div class="news__imagefake"></div>
-				<div class="news__content">
+				<div class="news__content" ref="contentRef">
 					<h3 class="news__title">
 						Expo Insurance {{ new Date().getFullYear() }}: <br />
 						A Space for New Opportunities
@@ -33,6 +33,15 @@ A Space for New Opportunities`,
 	text: 'Discover leading companies and innovative services at the international insurance exhibition. Explore the latest updates and opportunities in the insurance industry all in one place.'
 };
 const cards = Array(3).fill(card);
+
+const contentRef = ref();
+
+onMounted(() => {
+	GSAPanimation(contentRef.value.children, {
+		animProps: { x: -30, stagger: 0.1 },
+		scrollTriggerOptions: { trigger: contentRef.value }
+	});
+});
 </script>
 
 <style lang="scss" scoped>

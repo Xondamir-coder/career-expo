@@ -85,10 +85,51 @@ const banks = [
 </script>
 
 <style lang="scss" scoped>
+@keyframes slide-from-bottom {
+	from {
+		opacity: 0;
+		transform: translateY(20%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes slide-from-left {
+	from {
+		opacity: 0;
+		transform: translateX(-15px);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes img-appear {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+@keyframes slide-from-bottom {
+	from {
+		opacity: 0;
+		transform: translateY(20%);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
 .hero {
 	display: flex;
 	flex-direction: column;
 	gap: clamp(12px, 1.3vw, 24px);
+	$duration: 0.7s;
 
 	&__bottom {
 		display: flex;
@@ -103,6 +144,7 @@ const banks = [
 			align-items: stretch;
 		}
 		&-title {
+			animation: slide-from-left $duration 0.3s backwards;
 			color: $clr-midnight-blue;
 			font-size: clamp(20px, 1.2vw, 22px);
 			font-weight: 900;
@@ -113,6 +155,7 @@ const banks = [
 		}
 	}
 	&__label {
+		animation: slide-from-left $duration 0.25s backwards;
 		color: $clr-muted-grey;
 		font-size: clamp(12px, 1.1vw, 20px);
 		font-weight: 500;
@@ -120,6 +163,11 @@ const banks = [
 		padding-inline: clamp(16px, 1.3vw, 24px);
 		background-color: #f1f2f4;
 		border-radius: clamp(8px, 0.7vw, 12px);
+		@for $index from 1 through 6 {
+			&:nth-child(#{$index}) {
+				animation-delay: $index * 0.05s + 0.15s;
+			}
+		}
 	}
 	&__labels {
 		display: flex;
@@ -141,12 +189,14 @@ const banks = [
 		gap: clamp(12px, 1.3vw, 24px);
 	}
 	&__text {
+		animation: slide-from-bottom $duration 0.15s backwards;
 		font-size: clamp(16px, 1.3vw, 24px);
 		color: $clr-muted-grey;
 		line-height: 1.2;
 		max-width: 52ch;
 	}
 	&__title {
+		animation: slide-from-bottom $duration backwards;
 		font-size: clamp(24px, 2.5vw, 48px);
 		font-weight: 900;
 		line-height: 1.2;
@@ -166,6 +216,7 @@ const banks = [
 		}
 	}
 	&__image {
+		animation: img-appear $duration 0.15s backwards;
 		border-radius: clamp(12px, 1.1vw, 20px);
 		height: 100%;
 		@media only screen and (max-width: $bp-md) {
@@ -181,6 +232,12 @@ const banks = [
 	}
 	&__bank {
 		width: clamp(56px, 3.7vw, 70px);
+		animation: slide-from-bottom $duration backwards;
+		@for $i from 1 through 20 {
+			&:nth-child(#{$i}) {
+				animation-delay: $i * 0.05s + 0.3s;
+			}
+		}
 	}
 	&__banks {
 		display: grid;

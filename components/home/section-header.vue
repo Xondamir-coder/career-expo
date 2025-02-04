@@ -3,7 +3,7 @@
 		<TitleBlock :label="label" data-gsap-animate="true">
 			<slot />
 		</TitleBlock>
-		<p class="section-header__text">
+		<p class="section-header__text" ref="textRef">
 			Expo Career – bu yirik ish yarmarkasi bo‘lib, O‘zbekiston va xorijdagi nufuzli
 			kompaniyalarni bir maydonga jamlaydi. Biz tajribali
 		</p>
@@ -11,9 +11,16 @@
 </template>
 
 <script setup>
+const textRef = ref([]);
 defineProps({
 	text: String,
 	label: String
+});
+
+onMounted(() => {
+	GSAPanimation(textRef.value, {
+		animProps: { x: 50 }
+	});
 });
 </script>
 
