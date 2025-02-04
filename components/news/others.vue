@@ -13,28 +13,30 @@
 					class="other__item"
 					v-for="(item, i) in others"
 					:key="i">
-					<img :src="item.img" alt="card banner" class="other__item-image" />
-					<div class="other__item-content">
-						<div class="other__item-date">
-							<IconsCalendar class="icon fill-primary" />
-							{{
-								Intl.DateTimeFormat('en-GB', {
-									month: 'long',
-									day: '2-digit',
-									hour: '2-digit',
-									minute: '2-digit'
-								})
-									.format(new Date(item.date))
-									.replace('at', '')
-							}}
+					<NuxtLink :to="`/news/${item.slug}`" class="other__item-container">
+						<img :src="item.img" alt="card banner" class="other__item-image" />
+						<div class="other__item-content">
+							<div class="other__item-date">
+								<IconsCalendar class="icon fill-primary" />
+								{{
+									Intl.DateTimeFormat('en-GB', {
+										month: 'long',
+										day: '2-digit',
+										hour: '2-digit',
+										minute: '2-digit'
+									})
+										.format(new Date(item.date))
+										.replace('at', '')
+								}}
+							</div>
+							<h3 class="other__item-title">
+								{{ item.title }}
+							</h3>
 						</div>
-						<h3 class="other__item-title">
-							{{ item.title }}
-						</h3>
-					</div>
-					<NuxtLink :to="`/news/${item.slug}`" class="other__item-link">
-						<span>Read Case Study</span>
-						<IconsArrowRight class="icon stroke-primary" />
+						<button class="other__item-link">
+							<span>Read Case Study</span>
+							<IconsArrowRight class="icon stroke-primary" />
+						</button>
 					</NuxtLink>
 				</swiper-slide>
 			</swiper-container>
@@ -91,17 +93,27 @@ onMounted(() => {
 	}
 	&__item {
 		overflow: hidden;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
 		width: clamp(300px, 23vw, 427px);
+
 		background: #ffffff;
 		border: 1.33px solid #dfe1e7;
 		box-shadow: 0px 1.33px 4px 0px #0d0d120d;
 		padding: clamp(10px, 0.9vw, 16px);
 		border-radius: clamp(14px, 1.1vw, 20px);
-		gap: clamp(16px, 1.6vw, 30px);
-
+		transition: box-shadow 0.3s, background-color 0.3s, border-color 0.3s;
+		&-container {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: clamp(16px, 1.6vw, 30px);
+		}
+		&:hover {
+			background-color: #ebf5fa;
+			border-color: #d6ebf5;
+			.other__item-link {
+				@include news-card-link-hover;
+			}
+		}
 		&-content {
 			display: flex;
 			flex-direction: column;
@@ -114,12 +126,6 @@ onMounted(() => {
 		}
 		&-date {
 			@include news-card-date-text;
-			background: #ffffff;
-			border: 1px solid #0000001a;
-			backdrop-filter: blur(32px);
-			padding-block: 8px;
-			padding-inline: 10px;
-			border-radius: 8px;
 		}
 		&-title {
 			@include news-card-title;

@@ -1,20 +1,20 @@
 <template>
-	<div class="card">
+	<NuxtLink class="card" :to="`/news/${data.slug}`">
 		<div class="card__left">
 			<div class="card__top">
 				<div class="card__date">
-					<IconsCalendar class="icon fill-green" />
+					<IconsCalendar class="icon fill-primary" />
 					<span>{{ date }}</span>
 				</div>
 				<h3 class="card__title">{{ data.title }}</h3>
 			</div>
-			<NuxtLink :to="`/news/${data.slug}`" class="card__link">
+			<button class="card__link">
 				<span>Read Case Study</span>
 				<IconsArrowRight class="icon stroke-primary" />
-			</NuxtLink>
+			</button>
 		</div>
 		<img :src="data.img" :alt="data.title" class="card__image" />
-	</div>
+	</NuxtLink>
 </template>
 
 <script setup>
@@ -68,10 +68,15 @@ const date = computed(() =>
 	padding: clamp(12px, 1.1vw, 20px);
 	border-radius: clamp(16px, 1.1vw, 20px);
 	color: $clr-black;
-	transition: box-shadow 0.3s;
+	transition: box-shadow 0.3s, background-color 0.3s, border-color 0.3s;
 	overflow: hidden;
-	&:has(.card__link:hover) {
-		box-shadow: 0px 1.33px 4px 0px rgba($clr-primary, 0.3);
+	&:hover {
+		background-color: #ebf5fa;
+		border-color: #d6ebf5;
+		box-shadow: 0px 49px 100px -10px #28373f33;
+		.card__link {
+			@include news-card-link-hover;
+		}
 	}
 	&__date,
 	&__title,
@@ -93,6 +98,7 @@ const date = computed(() =>
 		@include news-card-link;
 	}
 	&__top {
+		align-items: flex-start;
 		display: flex;
 		flex-direction: column;
 		gap: 10px;

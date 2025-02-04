@@ -46,6 +46,17 @@
 		scroll-snap-align: $snap-align;
 	}
 }
+@mixin news-card-link-hover {
+	color: #fff;
+	border-color: transparent;
+	.icon {
+		stroke: #fff;
+		transform: translateX(3px);
+	}
+	&::after {
+		transform: scaleY(1);
+	}
+}
 @mixin news-card-link {
 	background: #ffffff;
 	border: 1.33px solid #dfe1e7;
@@ -63,15 +74,7 @@
 	overflow: hidden;
 	transition: color 0.3s, border-color 0.3s;
 	&:hover {
-		color: #fff;
-		border-color: transparent;
-		.icon {
-			stroke: #fff;
-			transform: translateX(3px);
-		}
-		&::after {
-			transform: scaleY(1);
-		}
+		@include news-card-link-hover;
 	}
 	&::after {
 		content: '';
@@ -100,6 +103,12 @@
 	color: $clr-midnight-blue;
 	font-size: 14px;
 	font-weight: 500;
+	background: #ffffff;
+	border: 1px solid #0000001a;
+	backdrop-filter: blur(32px);
+	padding-block: 8px;
+	padding-inline: 10px;
+	border-radius: 8px;
 }
 @mixin soft-box {
 	padding: clamp(16px, 2.1vw, 40px);
