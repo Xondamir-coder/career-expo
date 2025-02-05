@@ -12,8 +12,8 @@
 				& Sponsors
 			</h1>
 			<p class="partners__hero-text">
-				At Expo Insurance 2025, we are proud to collaborate with industry leaders and
-				innovators who share our vision of advancing the insurance sector.
+				At Expo Insurance {{ currentYear }}, we are proud to collaborate with industry
+				leaders and innovators who share our vision of advancing the insurance sector.
 			</p>
 		</div>
 		<div class="partners__content">
@@ -87,6 +87,53 @@ onMounted(() => {
 			animProps: { scale: 0.8, rotation: i % 2 === 0 ? 8 : -8 }
 		});
 	});
+});
+
+const currentYear = new Date().getFullYear(); // Dynamically fetch the current year
+
+useHead({
+	title: `Partners & Sponsors - Career Expo ${currentYear}`,
+	meta: [
+		{
+			name: 'description',
+			content: `Discover the industry leaders and innovators partnering with Career Expo to advance opportunities in the insurance and banking sectors for ${currentYear}.`
+		},
+		{
+			name: 'keywords',
+			content: `Career Expo, Partners, Sponsors, Industry Leaders, Banking Partners, Insurance Innovators, Collaborations, Expo ${currentYear}`
+		},
+		{
+			property: 'og:title',
+			content: `Partners & Sponsors - Career Expo ${currentYear}`
+		},
+		{
+			property: 'og:description',
+			content: `Meet the organizations supporting Career Expo ${currentYear}, including leaders in banking and insurance.`
+		},
+		{
+			property: 'og:url',
+			content: 'https://careerexpo.uz/partners-sponsors' // Replace with the actual page URL
+		},
+		{
+			property: 'og:type',
+			content: 'website'
+		},
+		{
+			name: 'twitter:card',
+			content: 'summary'
+		},
+		{
+			name: 'twitter:title',
+			content: `Partners & Sponsors - Career Expo ${currentYear}`
+		},
+		{
+			name: 'twitter:description',
+			content: `Learn about the trusted partners and sponsors collaborating with Career Expo ${currentYear}.`
+		}
+	],
+	link: [
+		{ rel: 'canonical', href: 'https://careerexpo.uz/partners-sponsors' } // Replace with the actual page URL
+	]
 });
 </script>
 

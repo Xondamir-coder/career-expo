@@ -25,9 +25,11 @@
 
 <script setup>
 import img from '~/assets/images/events-1.jpg';
+
+const currentYear = new Date().getFullYear();
 const card = {
 	img,
-	title: `Expo Insurance 2025: \n
+	title: `Expo Insurance ${currentYear}: \n
 A Space for New Opportunities`,
 	date: new Date().toISOString(),
 	text: 'Discover leading companies and innovative services at the international insurance exhibition. Explore the latest updates and opportunities in the insurance industry all in one place.'

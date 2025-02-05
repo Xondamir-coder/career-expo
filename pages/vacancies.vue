@@ -39,6 +39,53 @@ const changeField = field => {
 const filterVacancies = () => {
 	console.log(`Filtering vacancies based on ${currentField.value} and ${query.value}`);
 };
+
+const currentYear = new Date().getFullYear(); // Dynamically fetch the current year
+
+useHead({
+	title: `Vacancies - Career Expo ${currentYear}`,
+	meta: [
+		{
+			name: 'description',
+			content: `Explore exciting job opportunities with leading companies in various industries. Find your next career step with Career Expo ${currentYear}.`
+		},
+		{
+			name: 'keywords',
+			content: `Vacancies, Job Openings, Career Opportunities, Employment, Career Expo, ${currentYear}, Job Listings, Leading Companies, Professional Growth`
+		},
+		{
+			property: 'og:title',
+			content: `Vacancies - Career Expo ${currentYear}`
+		},
+		{
+			property: 'og:description',
+			content: `Discover the latest job openings from top companies at Career Expo ${currentYear}. Build your career with the right opportunity.`
+		},
+		{
+			property: 'og:url',
+			content: 'https://careerexpo.uz/vacancies' // Replace with the actual page URL
+		},
+		{
+			property: 'og:type',
+			content: 'website'
+		},
+		{
+			name: 'twitter:card',
+			content: 'summary'
+		},
+		{
+			name: 'twitter:title',
+			content: `Vacancies - Career Expo ${currentYear}`
+		},
+		{
+			name: 'twitter:description',
+			content: `Search through the latest job opportunities at Career Expo ${currentYear} and find your dream role.`
+		}
+	],
+	link: [
+		{ rel: 'canonical', href: 'https://careerexpo.uz/vacancies' } // Replace with the actual page URL
+	]
+});
 </script>
 
 <style scoped lang="scss">

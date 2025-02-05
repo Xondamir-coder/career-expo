@@ -23,7 +23,7 @@ const content = [
 	{
 		title: 'Use of the Website',
 		subtitle:
-			'The Insurance Expo Exhibition is a premier international event uniting banking institutions from Uzbekistan and around the globe under one roof. As a dynamic platform for collaboration, innovation, and growth, the exhibition serves as a gateway to the future of banking and financial services.',
+			'The Career Expo Exhibition is a premier international event uniting banking institutions from Uzbekistan and around the globe under one roof. As a dynamic platform for collaboration, innovation, and growth, the exhibition serves as a gateway to the future of banking and financial services.',
 		texts: [
 			'You must be at least [Insert Age, e.g., 18 years] to use this website.',
 			'You agree to use the website only for lawful purposes and in a way that does not infringe the rights of, restrict, or inhibit the use of this website by any third party.',
@@ -77,36 +77,52 @@ const content = [
 ];
 
 useHead({
-	title: `Terms of Service - Insurance Expo ${new Date().getFullYear()}`,
+	title: 'Terms of Service - Career Expo',
 	meta: [
 		{
 			name: 'description',
 			content:
-				'Review the terms of service for using the Insurance Expo website. Learn about your rights, responsibilities, and the conditions of use.'
+				'Review the Terms of Service for Career Expo to understand the rules and regulations governing the use of our platform.'
+		},
+		{
+			name: 'keywords',
+			content:
+				'Terms of Service, Career Expo, Rules and Regulations, Legal Agreement, Platform Usage'
 		},
 		{
 			property: 'og:title',
-			content: `Terms of Service - Insurance Expo ${new Date().getFullYear()}`
+			content: 'Terms of Service - Career Expo'
 		},
 		{
 			property: 'og:description',
 			content:
-				'Review the terms of service for using the Insurance Expo website. Learn about your rights, responsibilities, and the conditions of use.'
+				'Understand the terms and conditions of using Career Expo services in our Terms of Service.'
 		},
-		{ property: 'og:url', content: 'https://insurexpo.uz/terms-of-service' },
-		{ property: 'og:type', content: 'website' },
-		{ name: 'twitter:card', content: 'summary_large_image' },
+		{
+			property: 'og:url',
+			content: 'https://careerexpo.uz/terms-of-service' // Replace with the actual URL
+		},
+		{
+			property: 'og:type',
+			content: 'website'
+		},
+		{
+			name: 'twitter:card',
+			content: 'summary'
+		},
 		{
 			name: 'twitter:title',
-			content: `Terms of Service - Insurance Expo ${new Date().getFullYear()}`
+			content: 'Terms of Service - Career Expo'
 		},
 		{
 			name: 'twitter:description',
 			content:
-				'Review the terms of service for using the Insurance Expo website. Learn about your rights, responsibilities, and the conditions of use.'
+				'Learn the rules and conditions for using Career Expo services in our Terms of Service.'
 		}
 	],
-	link: [{ rel: 'canonical', href: 'https://insurexpo.uz/terms-of-service' }]
+	link: [
+		{ rel: 'canonical', href: 'https://careerexpo.uz/terms-of-service' } // Replace with the actual URL
+	]
 });
 </script>
 
