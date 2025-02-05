@@ -7,6 +7,7 @@
 				v-for="field in fields"
 				:key="field.name"
 				:class="{ active: field.name === currentField }"
+				:aria-pressed="field.name === currentField"
 				@click="emits('changeField', field.name)">
 				<span class="sidebar__button-text">{{ field.label }}</span>
 			</button>

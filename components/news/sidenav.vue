@@ -4,14 +4,15 @@
 		<nav class="sidenav__list">
 			<NuxtLink
 				class="sidenav__item"
-				:to="`/news/${item.slug}`"
 				v-for="(item, i) in news"
+				:to="`/news/${item.slug}`"
+				:aria-label="`Read news article: ${item.title}`"
 				:key="i">
 				<img
 					width="100"
 					height="100"
 					:src="item.img"
-					alt="news banner"
+					:alt="`Thumbnail for ${item.title}`"
 					class="sidenav__item-image" />
 				<h3 class="sidenav__item-title">
 					{{

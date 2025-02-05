@@ -11,9 +11,9 @@
 				Sorry, the page you’re looking for does not exist or has been moved please go back
 				to the Home page
 			</p>
-			<NuxtLink to="/" class="error__link">
+			<NuxtLink to="/" class="error__link" title="Go back to the home page">
 				<span>Go back home</span>
-				<IconsCircleNoArrow class="error__arrow" />
+				<IconsCircleNoArrow class="error__arrow" aria-hidden="true" />
 			</NuxtLink>
 		</div>
 	</div>

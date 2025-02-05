@@ -18,5 +18,5 @@ export default defineNuxtConfig({
 		'~/assets/styles/main.scss' // Replace with the path to your SCSS file
 	],
 
-	modules: ['nuxt-swiper']
+	modules: ['nuxt-swiper', '@nuxtjs/seo']
 });

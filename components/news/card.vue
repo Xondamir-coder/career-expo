@@ -1,5 +1,8 @@
 <template>
-	<NuxtLink class="card" :to="`/news/${data.slug}`">
+	<NuxtLink
+		class="card"
+		:to="`/news/${data.slug}`"
+		:aria-label="`Read more about: ${data.title}`">
 		<div class="card__left">
 			<div class="card__top">
 				<div class="card__date">
@@ -8,10 +11,10 @@
 				</div>
 				<h3 class="card__title">{{ data.title }}</h3>
 			</div>
-			<button class="card__link">
+			<div class="card__link">
 				<span>Read Case Study</span>
 				<IconsArrowRight class="icon stroke-primary" />
-			</button>
+			</div>
 		</div>
 		<img :src="data.img" :alt="data.title" class="card__image" />
 	</NuxtLink>

@@ -1,7 +1,7 @@
 <template>
 	<div class="top">
-		<NuxtLink to="/news" class="top__back">
-			<IconsArrowLeft class="icon" />
+		<NuxtLink to="/news" class="top__back" title="Go back to the news page">
+			<IconsArrowLeft class="icon" aria-hidden="true" />
 			<span class="top__word">Go back</span>
 		</NuxtLink>
 		<div class="top__cols">

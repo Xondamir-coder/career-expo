@@ -1,15 +1,15 @@
 <template>
 	<div class="filter">
 		<form @submit.prevent="emits('submitQuery')" class="filter__form">
-			<button type="submit" class="filter__search">
-				<IconsSearch class="icon stroke-neutral-grey" />
+			<button type="submit" class="filter__search" aria-label="Enter query">
+				<IconsSearch class="icon stroke-neutral-grey" aria-hidden="true" />
 			</button>
 			<input required type="text" v-model="model" class="filter__input" placeholder="Поиск" />
 		</form>
 		<div class="filter__sort">
-			<button class="filter__button">
+			<button class="filter__button" title="Sort">
 				<span>Сортировка</span>
-				<IconsArrowLeft class="filter__arrow" />
+				<IconsArrowLeft class="filter__arrow" aria-hidden="true" />
 			</button>
 		</div>
 	</div>

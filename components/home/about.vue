@@ -12,7 +12,10 @@
 			<video class="about__video" loop autoplay muted @timeupdate="trackVideo" ref="videoRef">
 				<source src="~/assets/videos/board-drawing.mp4" type="video/mp4" />
 			</video>
-			<button class="about__video-controls" @click="toggleVideo">
+			<button
+				class="about__video-controls"
+				@click="toggleVideo"
+				title="Toggle video playback">
 				<div class="about__icon-container">
 					<IconsPause class="about__icon" :class="{ active: isPlaying }" />
 					<IconsPlay class="about__icon" :class="{ active: !isPlaying }" />

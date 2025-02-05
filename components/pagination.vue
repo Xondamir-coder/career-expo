@@ -1,14 +1,16 @@
 <template>
 	<div class="pagination">
-		<!-- arrow left -->
+		<!-- Pagination Previous Button (Arrow Left) -->
 		<button
 			class="pagination__button"
 			:disabled="currentPage === 1"
+			:aria-disabled="currentPage === 1"
+			aria-label="Go to previous page"
 			@click="changePage(currentPage - 1)">
-			<IconsArrowLeft class="pagination__arrow" />
+			<IconsArrowLeft class="pagination__arrow" aria-hidden="true" />
 		</button>
 
-		<!-- all buttons  -->
+		<!-- pages  -->
 		<button
 			class="pagination__button pagination__button--number"
 			v-for="i in pagesCount - 1"
@@ -17,6 +19,7 @@
 				'pagination__button--hidden': i > shownButtonsCount
 			}"
 			:key="i"
+			:aria-label="`Go to page ${i}`"
 			@click="changePage(i)">
 			{{ i }}
 		</button>
@@ -25,7 +28,8 @@
 		<button
 			class="pagination__button pagination__button--number"
 			v-if="shownButtonsCount < pagesCount - 1"
-			@click="showAllButtons">
+			@click="showAllButtons"
+			aria-label="Show more pages">
 			...
 		</button>
 
@@ -35,16 +39,21 @@
 			:class="{
 				'pagination__button--active': pagesCount === currentPage
 			}"
+			:aria-label="`Go to last page (${pagesCount})`"
 			@click="changePage(pagesCount)">
 			{{ pagesCount }}
 		</button>
 
-		<!-- right arrow -->
+		<!-- Pagination Next Button (Arrow Right) -->
 		<button
 			class="pagination__button"
 			:disabled="currentPage === pagesCount"
+			:aria-disabled="currentPage === pagesCount"
+			aria-label="Go to next page"
 			@click="changePage(currentPage + 1)">
-			<IconsArrowLeft class="pagination__arrow pagination__arrow--reverse" />
+			<IconsArrowLeft
+				class="pagination__arrow pagination__arrow--reverse"
+				aria-hidden="true" />
 		</button>
 	</div>
 </template>

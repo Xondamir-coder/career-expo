@@ -7,10 +7,13 @@
 					Discover the future <br />
 					of banking technology in one place!
 				</h2>
-				<button to="/contact" class="footer__button">
+				<NuxtLink
+					to="/contact"
+					class="footer__button"
+					title="Get started with our services">
 					Get started
-					<IconsCircleNoArrow class="footer__arrow" />
-				</button>
+					<IconsCircleNoArrow class="footer__arrow" aria-hidden="true" />
+				</NuxtLink>
 			</div>
 			<div class="footer__cols">
 				<div class="footer__col">
@@ -20,7 +23,8 @@
 							class="footer__link"
 							v-for="link in links"
 							:key="link.to"
-							:to="link.to">
+							:to="link.to"
+							:title="`Visit ${link.label}`">
 							{{ link.label }}
 						</NuxtLink>
 					</div>
@@ -32,7 +36,8 @@
 							class="footer__link"
 							v-for="service in services"
 							:key="service.to"
-							:to="service.to">
+							:to="service.to"
+							:title="`Visit ${service.label}`">
 							{{ service.label }}
 						</NuxtLink>
 					</div>
@@ -40,11 +45,17 @@
 				<div class="footer__col">
 					<h4 class="footer__col-label">Contacts</h4>
 					<div class="footer__contacts">
-						<a class="footer__contact" href="mailto:Example@gmail.com">
+						<a
+							class="footer__contact"
+							href="mailto:Example@gmail.com"
+							title="Send an email to Example@gmail.com">
 							<IconsMail class="footer__icon" />
 							Example@gmail.com
 						</a>
-						<a class="footer__contact" href="tel:+777 123 88 71">
+						<a
+							class="footer__contact"
+							href="tel:+777 123 88 71"
+							title="Call us at +777 123 88 71">
 							<IconsTel class="footer__icon" />
 							+777 123 88 71
 						</a>
@@ -52,17 +63,19 @@
 					<div class="footer__social">
 						<a
 							class="footer__social-item"
-							href="#"
+							href="https://www.instagram.com"
 							target="_blank"
-							rel="noopener noreferrer">
-							<IconsInsta class="footer__social-icon" />
+							rel="noopener noreferrer"
+							aria-label="Visit us on Instagram">
+							<IconsInsta class="footer__social-icon" aria-hidden="true" />
 						</a>
 						<a
 							class="footer__social-item"
-							href="#"
+							href="https://t.me"
 							target="_blank"
-							rel="noopener noreferrer">
-							<IconsTelegram class="footer__social-icon" />
+							rel="noopener noreferrer"
+							aria-label="Visit us on Telegram">
+							<IconsTelegram class="footer__social-icon" aria-hidden="true" />
 						</a>
 					</div>
 				</div>
@@ -73,10 +86,16 @@
 				&copy; {{ new Date().getFullYear() }} Expo - All rights reserved
 			</p>
 			<div class="footer__bottom-links">
-				<NuxtLink to="/terms-of-service" class="footer__bottom-link">
+				<NuxtLink
+					to="/terms-of-service"
+					class="footer__bottom-link"
+					title="Visit Terms of Service page">
 					<span>Terms of service</span>
 				</NuxtLink>
-				<NuxtLink to="/privacy-policy" class="footer__bottom-link">
+				<NuxtLink
+					to="/privacy-policy"
+					class="footer__bottom-link"
+					title="Visit Privacy and Policy page">
 					<span>Privacy policy</span>
 				</NuxtLink>
 			</div>

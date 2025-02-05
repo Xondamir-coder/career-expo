@@ -18,7 +18,6 @@ import img from '~/assets/images/girls-studying.jpg';
 const card = {
 	date: new Date().toISOString(),
 	title: 'Taciti proin pulvinar adipiscing elit penatibus amet libero aenean vehicula ut sem cubilia taciti',
-	link: '#',
 	img,
 	slug: 'some-slug'
 };

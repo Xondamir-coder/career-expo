@@ -13,7 +13,10 @@
 					class="other__item"
 					v-for="(item, i) in others"
 					:key="i">
-					<NuxtLink :to="`/news/${item.slug}`" class="other__item-container">
+					<NuxtLink
+						:to="`/news/${item.slug}`"
+						:aria-label="`Read more about: ${item.title}`"
+						class="other__item-container">
 						<img :src="item.img" alt="card banner" class="other__item-image" />
 						<div class="other__item-content">
 							<div class="other__item-date">
@@ -33,10 +36,10 @@
 								{{ item.title }}
 							</h3>
 						</div>
-						<button class="other__item-link">
+						<div class="other__item-link">
 							<span>Read Case Study</span>
 							<IconsArrowRight class="icon stroke-primary" />
-						</button>
+						</div>
 					</NuxtLink>
 				</swiper-slide>
 			</swiper-container>

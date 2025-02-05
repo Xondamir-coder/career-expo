@@ -1,11 +1,11 @@
 <template>
 	<header class="header">
 		<div class="header__left">
-			<button class="header__hamburger">
-				<IconsMenu class="icon fill-primary" />
+			<button class="header__hamburger" aria-label="Open menu">
+				<IconsMenu class="icon fill-primary" aria-hidden="true" />
 			</button>
-			<NuxtLink to="/">
-				<Logo class="logo header__logo" />
+			<NuxtLink to="/" aria-label="Go to Home Page">
+				<Logo class="logo header__logo" aria-hidden="true" />
 			</NuxtLink>
 		</div>
 		<nav class="header__nav">
@@ -14,7 +14,8 @@
 				:key="link.to"
 				:to="link.to"
 				class="header__link"
-				active-class="active">
+				active-class="active"
+				:title="`Visit ${link.label}`">
 				<div class="header__link-bg_container">
 					<div class="header__link-bg"></div>
 				</div>
@@ -22,11 +23,11 @@
 			</NuxtLink>
 		</nav>
 		<div class="header__right">
-			<button class="header__lang">
-				<IconsGlobe class="icon fill-primary" />
+			<button class="header__lang" title="Change language">
+				<IconsGlobe class="icon fill-primary" aria-hidden="true" />
 				<span>{{ currentLang.toUpperCase() }}</span>
 			</button>
-			<NuxtLink to="/contact" class="header__button">
+			<NuxtLink to="/contact" class="header__button" title="Get in touch with us">
 				<span>Contact Us</span>
 			</NuxtLink>
 		</div>
