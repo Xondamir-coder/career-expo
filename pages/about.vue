@@ -10,7 +10,7 @@
 
 <script setup>
 useHead({
-	title: 'About Us - Career Expo',
+	title: 'About Us',
 	meta: [
 		{
 			name: 'description',

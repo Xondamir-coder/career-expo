@@ -22,6 +22,21 @@ const card = {
 	slug: 'some-slug'
 };
 const cards = Array(6).fill(card);
+
+useHead({
+	title: 'News',
+	meta: [
+		{
+			name: 'description',
+			content: 'All the latest news and exciting events'
+		},
+		{
+			name: 'keywords',
+			content:
+				'career expo, career growth, career development, job fair, job search, talent acquisition, recruitment, human resources, HR, career advice, career guidance, career counseling'
+		}
+	]
+});
 </script>
 
 <style lang="scss" scoped>

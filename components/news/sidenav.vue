@@ -1,11 +1,11 @@
 <template>
 	<div class="sidenav">
-		<h2 class="sidenav__title">Popular news</h2>
+		<h2 class="sidenav__title">Popular {{ $route.path.split('/')[1] }}</h2>
 		<nav class="sidenav__list">
 			<NuxtLink
 				class="sidenav__item"
 				v-for="(item, i) in news"
-				:to="`/news/${item.slug}`"
+				:to="`/${$route.path.split('/')[1]}/${item.slug}`"
 				:aria-label="`Read news article: ${item.title}`"
 				:key="i">
 				<img
@@ -37,18 +37,11 @@
 </template>
 
 <script setup>
-import img from '~/assets/images/boys-bicycle.jpg';
-
-const obj = {
-	img,
-	title: 'What are bay windows: can you eat them, wear them, or take them on a trip? Neither. We tell and show you in this text',
-	views: '141',
-	date: new Date().toISOString(),
-	slug: 'some-slug'
-};
-const news = Array(4).fill(obj);
-
 const titleMaxLength = ref(50);
+
+defineProps({
+	news: Array
+});
 
 onMounted(() => {
 	if (window.innerWidth <= 768 && window.innerWidth > 480) {

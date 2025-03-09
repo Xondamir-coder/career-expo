@@ -6,7 +6,7 @@
 				<div class="news__imagefake"></div>
 				<div class="news__content" ref="contentRef">
 					<h3 class="news__title">
-						Expo Insurance {{ new Date().getFullYear() }}: <br />
+						Career Expo {{ new Date().getFullYear() }}: <br />
 						A Space for New Opportunities
 					</h3>
 					<p class="news__text">
@@ -29,7 +29,7 @@ import img from '~/assets/images/events-1.jpg';
 const currentYear = new Date().getFullYear();
 const card = {
 	img,
-	title: `Expo Insurance ${currentYear}: \n
+	title: `Career Expo ${currentYear}: \n
 A Space for New Opportunities`,
 	date: new Date().toISOString(),
 	text: 'Discover leading companies and innovative services at the international insurance exhibition. Explore the latest updates and opportunities in the insurance industry all in one place.'
@@ -43,6 +43,10 @@ onMounted(() => {
 		animProps: { x: -30, stagger: 0.1 },
 		scrollTriggerOptions: { trigger: contentRef.value }
 	});
+});
+
+useHead({
+	title: 'News'
 });
 </script>
 

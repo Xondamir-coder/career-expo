@@ -12,8 +12,8 @@
 				& Sponsors
 			</h1>
 			<p class="partners__hero-text">
-				At Expo Insurance {{ currentYear }}, we are proud to collaborate with industry
-				leaders and innovators who share our vision of advancing the insurance sector.
+				At Career Expo {{ currentYear }}, we are proud to collaborate with industry leaders
+				and innovators who share our vision of advancing the insurance sector.
 			</p>
 		</div>
 		<div class="partners__content">
@@ -92,7 +92,7 @@ onMounted(() => {
 const currentYear = new Date().getFullYear(); // Dynamically fetch the current year
 
 useHead({
-	title: `Partners & Sponsors - Career Expo ${currentYear}`,
+	title: `Partners & Sponsors`,
 	meta: [
 		{
 			name: 'description',

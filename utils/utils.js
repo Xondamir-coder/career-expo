@@ -5,8 +5,8 @@ export const getLinks = () => {
 			label: 'About us'
 		},
 		{
-			to: '/participants',
-			label: 'Participants'
+			to: '/events',
+			label: 'Events'
 		},
 		{
 			to: '/news',

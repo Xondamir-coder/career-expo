@@ -1,24 +1,11 @@
 <template>
-	<main class="policy">
-		<!-- <Breadcrumbs :breadcrumbs="breadcrumbs" /> -->
-		<Legal
-			title="Privacy Policy"
-			subtitle="The Career Expo Exhibition is a premier international event uniting banking institutions from Uzbekistan and around the globe under one roof. As a dynamic platform for collaboration, innovation, and growth, the exhibition serves as a gateway to the future of banking and financial services."
-			:content="content" />
-	</main>
+	<Legal
+		title="Privacy Policy"
+		subtitle="The Career Expo Exhibition is a premier international event uniting banking institutions from Uzbekistan and around the globe under one roof. As a dynamic platform for collaboration, innovation, and growth, the exhibition serves as a gateway to the future of banking and financial services."
+		:content="content" />
 </template>
 
 <script setup>
-const breadcrumbs = [
-	{
-		to: '/',
-		label: 'Home'
-	},
-	{
-		to: '/privacy-policy',
-		label: 'Privacy Policy'
-	}
-];
 const content = [
 	{
 		title: 'About the Career Expo Exhibition',
@@ -76,7 +63,7 @@ const content = [
 ];
 
 useHead({
-	title: 'Privacy Policy - Career Expo',
+	title: 'Privacy Policy',
 	meta: [
 		{
 			name: 'description',
@@ -124,11 +111,3 @@ useHead({
 	]
 });
 </script>
-
-<style lang="scss" scoped>
-.policy {
-	display: flex;
-	gap: clamp(20px, 3vw, 30px);
-	flex-direction: column;
-}
-</style>

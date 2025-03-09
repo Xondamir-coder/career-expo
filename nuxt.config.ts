@@ -13,7 +13,11 @@ export default defineNuxtConfig({
 			}
 		}
 	},
-
+	app: {
+		head: {
+			titleTemplate: '%s - Career Expo'
+		}
+	},
 	css: [
 		'~/assets/styles/main.scss' // Replace with the path to your SCSS file
 	],

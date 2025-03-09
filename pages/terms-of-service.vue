@@ -1,24 +1,11 @@
 <template>
-	<main class="terms">
-		<!-- <Breadcrumbs :breadcrumbs="breadcrumbs" /> -->
-		<Legal
-			title="Terms & Conditions"
-			subtitle="Welcome to Bank Expo! By accessing or using this website, you agree to comply with and be bound by the following terms and conditions. If you do not agree to these terms, please refrain from using our site."
-			:content="content" />
-	</main>
+	<Legal
+		title="Terms & Conditions"
+		subtitle="Welcome to Career Expo! By accessing or using this website, you agree to comply with and be bound by the following terms and conditions. If you do not agree to these terms, please refrain from using our site."
+		:content="content" />
 </template>
 
 <script setup>
-const breadcrumbs = [
-	{
-		to: '/',
-		label: 'Home'
-	},
-	{
-		to: '/terms-of-service',
-		label: 'Terms of service'
-	}
-];
 const content = [
 	{
 		title: 'Use of the Website',
@@ -34,7 +21,7 @@ const content = [
 		title: 'Intellectual Property Rights',
 		subtitle: null,
 		texts: [
-			'All content on this website, including but not limited to text, images, logos, and code, is owned by or licensed to Bank Expo.',
+			'All content on this website, including but not limited to text, images, logos, and code, is owned by or licensed to Career Expo.',
 			'You may not reproduce, distribute, or otherwise exploit any content on this website without prior written consent from us.'
 		]
 	},
@@ -77,7 +64,7 @@ const content = [
 ];
 
 useHead({
-	title: 'Terms of Service - Career Expo',
+	title: 'Terms of Service',
 	meta: [
 		{
 			name: 'description',
@@ -125,11 +112,3 @@ useHead({
 	]
 });
 </script>
-
-<style lang="scss" scoped>
-.terms {
-	display: flex;
-	gap: clamp(20px, 3vw, 30px);
-	flex-direction: column;
-}
-</style>

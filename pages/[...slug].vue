@@ -23,6 +23,20 @@
 definePageMeta({
 	layout: false
 });
+
+useHead({
+	title: '404',
+	meta: [
+		{
+			name: 'description',
+			content: 'Page not found'
+		},
+		{
+			name: 'keywords',
+			content: '404, page not found'
+		}
+	]
+});
 </script>
 
 <style lang="scss" scoped>

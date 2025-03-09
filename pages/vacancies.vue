@@ -43,7 +43,7 @@ const filterVacancies = () => {
 const currentYear = new Date().getFullYear(); // Dynamically fetch the current year
 
 useHead({
-	title: `Vacancies - Career Expo ${currentYear}`,
+	title: 'Vacancies',
 	meta: [
 		{
 			name: 'description',

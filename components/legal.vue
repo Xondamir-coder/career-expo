@@ -38,11 +38,19 @@ defineProps({
 	}
 }
 .legal {
-	align-self: center;
+	margin-top: clamp(30px, 4.3vw, 80px);
+	margin-bottom: 30px;
+	padding: $layout-spacing;
+	border-top-left-radius: clamp(12px, 4vw, 80px);
+	border-top-right-radius: clamp(12px, 4vw, 80px);
 	display: flex;
 	flex-direction: column;
 	gap: clamp(16px, 1.5vw, 30px);
-	max-width: max(900px, 32vw);
+	background-color: #fff;
+	@media only screen and (max-width: $bp-md) {
+		margin-inline: 16px;
+		border-radius: 12px;
+	}
 	& > * {
 		animation: slide-from-left 0.7s backwards;
 		@for $i from 1 through 10 {
@@ -75,6 +83,8 @@ defineProps({
 	}
 	&__title {
 		font-size: clamp(24px, 2.5vw, 42px);
+		text-transform: uppercase;
+		font-weight: 900;
 	}
 	&__text {
 		color: #323b49;
