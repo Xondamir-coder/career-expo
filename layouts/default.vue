@@ -3,12 +3,12 @@
 		<Header />
 		<slot />
 		<Footer />
+		<Cookie />
+		<Contact />
 	</div>
 </template>
 
-<script setup>
-const route = useRoute();
-</script>
+<script setup></script>
 
 <style lang="scss" scoped>
 .layout {

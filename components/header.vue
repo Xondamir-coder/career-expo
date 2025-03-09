@@ -27,9 +27,9 @@
 				<IconsGlobe class="icon fill-primary" aria-hidden="true" />
 				<span>{{ currentLang.toUpperCase() }}</span>
 			</button>
-			<NuxtLink to="/contact" class="header__button" title="Get in touch with us">
+			<button data-contact="true" class="header__button" title="Get in touch with us">
 				<span>Contact Us</span>
-			</NuxtLink>
+			</button>
 		</div>
 	</header>
 </template>

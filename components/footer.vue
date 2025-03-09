@@ -7,13 +7,13 @@
 					Discover the future <br />
 					of banking technology in one place!
 				</h2>
-				<NuxtLink
-					to="/contact"
+				<button
+					data-contact="true"
 					class="footer__button"
 					title="Get started with our services">
 					Get started
 					<IconsCircleNoArrow class="footer__arrow" aria-hidden="true" />
-				</NuxtLink>
+				</button>
 			</div>
 			<div class="footer__cols">
 				<div class="footer__col">

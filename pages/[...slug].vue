@@ -1,10 +1,7 @@
 <template>
 	<div class="error">
 		<Logo class="error__top" />
-		<div class="error__content">
-			<h1 class="error__title">404</h1>
-			<Plug class="error__plug" />
-		</div>
+		<Spaceship class="error__spaceship" />
 		<div class="error__bottom">
 			<h2 class="error__bottom-title">Page Not Found</h2>
 			<p class="error__text">
@@ -91,6 +88,11 @@ useHead({
 	& > *:not(.error__content) {
 		padding-inline: 16px;
 	}
+	&__spaceship {
+		width: 100%;
+		max-width: 420px;
+		animation: appear-from-small 0.5s;
+	}
 	&__plug {
 		animation: plug-slide 1s 0.3s backwards;
 		@media only screen and (min-width: $bp-xl) {
@@ -113,7 +115,7 @@ useHead({
 		font-weight: 400;
 		line-height: 1.45;
 		text-align: center;
-		color: rgba($clr-black, 0.8);
+		color: rgba($clr-black, 0.6);
 	}
 	&__title {
 		color: #c89e45;
@@ -156,7 +158,7 @@ useHead({
 			animation: slide-from-bottom 0.7s backwards;
 			@for $i from 1 through 3 {
 				&:nth-child(#{$i}) {
-					animation-delay: $i * 0.15s + 0.45s;
+					animation-delay: $i * 0.15s;
 				}
 			}
 		}
