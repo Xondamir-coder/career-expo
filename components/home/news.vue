@@ -44,10 +44,6 @@ onMounted(() => {
 		scrollTriggerOptions: { trigger: contentRef.value }
 	});
 });
-
-useHead({
-	title: 'News'
-});
 </script>
 
 <style lang="scss" scoped>

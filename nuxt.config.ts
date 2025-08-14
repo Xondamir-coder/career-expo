@@ -15,12 +15,10 @@ export default defineNuxtConfig({
 	},
 	app: {
 		head: {
-			titleTemplate: '%s - Career Expo'
+			titleTemplate: '%s - Career Expo',
+			link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }]
 		}
 	},
-	css: [
-		'~/assets/styles/main.scss' // Replace with the path to your SCSS file
-	],
-
+	css: ['~/assets/styles/main.scss'],
 	modules: ['nuxt-swiper', '@nuxtjs/seo']
 });

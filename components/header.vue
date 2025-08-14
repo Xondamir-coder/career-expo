@@ -267,7 +267,7 @@ const currentLang = ref('en');
 		animation: slide-from-left 0.5s;
 	}
 	&__logo {
-		width: clamp(100px, 7.6vw, 150px);
+		width: clamp(200px, 15.7vw, 300px);
 		@media only screen and (max-width: 1260px) {
 			animation: none;
 		}

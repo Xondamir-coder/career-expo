@@ -1,6 +1,6 @@
 <template>
 	<footer class="footer" id="footer">
-		<Logo class="footer__logo logo" />
+		<LogoWhite class="footer__logo logo" />
 		<div class="footer__middle">
 			<div class="footer__middle-cta">
 				<h2 class="footer__title">
@@ -104,8 +104,6 @@
 </template>
 
 <script setup>
-import { IconsInsta } from '#components';
-
 const links = getLinks();
 const services = Array(6).fill({
 	to: '/service',
@@ -138,7 +136,7 @@ onMounted(() => {
 }
 .footer {
 	flex: 1;
-	background-color: $clr-navy-blue;
+	background-color: $clr-deep-cyan;
 	z-index: 3;
 	padding-block: clamp(16px, 3vw, 30px);
 	display: flex;
@@ -332,7 +330,7 @@ onMounted(() => {
 		}
 	}
 	&__logo {
-		width: 195px;
+		width: 237px;
 		@media only screen and (max-width: $bp-md) {
 			margin-inline: auto;
 		}

@@ -169,7 +169,7 @@ useHead({
 		}
 	}
 	&__top {
-		width: clamp(194px, 15vw, 232px);
+		width: clamp(250px, 21vw, 400px);
 		height: auto;
 		animation: slide-from-top 0.7s backwards;
 	}

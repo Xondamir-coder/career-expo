@@ -11,7 +11,7 @@
 <script setup>
 import ogImg from '~/assets/images/girl-thumbsup.jpg';
 useHead({
-	title: 'Career Expo – Your Future Starts Here!',
+	title: 'Your future starts here at',
 	meta: [
 		{
 			name: 'description',
@@ -25,7 +25,7 @@ useHead({
 		},
 		{
 			property: 'og:title',
-			content: 'Career Expo – Your Future Starts Here!'
+			content: 'Your future starts here at'
 		},
 		{
 			property: 'og:description',
@@ -50,7 +50,7 @@ useHead({
 		},
 		{
 			name: 'twitter:title',
-			content: 'Career Expo – Your Future Starts Here!'
+			content: 'Your future starts here at'
 		},
 		{
 			name: 'twitter:description',
