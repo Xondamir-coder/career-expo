@@ -1,0 +1,20 @@
+image: alpine:latest
+pages:
+  stage: deploy
+  before_script:
+    - npm -v
+    - pm2 status
+  script:
+    - cp -r -u * /var/www/careerexpo.uz
+    - cd /var/www/careerexpo.uz
+    - ls -la
+    # - pm2 restart careerexpo
+    # - pm2 delete careerexpo
+    - NODE_OPTIONS="--max-old-space-size=1024" npm run build
+    - pm2 restart careerexpo
+  # - PORT=3003 pm2 start .output/server/index.mjs --name careerexpo
+  artifacts:
+    paths:
+      - ./*
+  only:
+    - main
