@@ -16,7 +16,13 @@ export default defineNuxtConfig({
   app: {
     head: {
       titleTemplate: '%s - Career Expo',
-      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/svg+xml',
+          href: '/favicon.svg'
+        }
+      ],
       script: [
         {
           src: 'https://www.googletagmanager.com/gtag/js?id=G-G2DGZWQ3ZJ',
